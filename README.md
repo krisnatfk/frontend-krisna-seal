@@ -42,7 +42,7 @@ Tambahkan screenshot project di sini (opsional)
 
 ## 🔗 Live Demo
 
-https://your-project.vercel.app
+https://frontend-krisna-seal.vercel.app/
 
 ## ⚙️ Cara Menjalankan Project
 
