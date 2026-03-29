@@ -1,6 +1,5 @@
-// Use relative URL so Vite dev proxy handles CORS; in production, use the full URL
-const isDev = import.meta.env.DEV;
-const BASE_URL = isDev ? '/api' : 'https://berita-indo-api-next.vercel.app/api';
+// Always use relative /api path — works with both Vite dev proxy and Vercel production rewrites
+const BASE_URL = '/api';
 
 /**
  * In-memory cache to avoid re-fetching when switching categories back and forth.
