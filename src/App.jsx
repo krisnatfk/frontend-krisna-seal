@@ -10,11 +10,16 @@ function AppRoutes() {
   const location = useLocation();
 
   // Extract active category from path
-  const path = location.pathname.replace('/', '');
-  const activeCategory = path === 'news' || path.startsWith('news/') ? '' : (path || 'terbaru');
+  let path = location.pathname.replace(/^\/+/, '');
+  if (path === '') path = 'beranda';
+  const activeCategory = path.startsWith('news') ? '' : path;
 
   const handleCategoryChange = (cat) => {
-    navigate(`/${cat}`);
+    if (cat === 'beranda') {
+      navigate('/');
+    } else {
+      navigate(`/${cat}`);
+    }
     window.scrollTo(0, 0);
   };
 
@@ -25,7 +30,7 @@ function AppRoutes() {
         onCategoryChange={handleCategoryChange}
       />
       <Routes>
-        <Route path="/" element={<Navigate to="/terbaru" replace />} />
+        <Route path="/" element={<Home />} />
         <Route path="/:category" element={<Home />} />
         <Route path="/news/detail" element={<Detail />} />
       </Routes>

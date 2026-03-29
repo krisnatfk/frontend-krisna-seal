@@ -17,18 +17,16 @@ const Hero = ({ articles, onClick }) => {
   };
 
   return (
-    <section className="mb-14">
-      {/* Headline label — matching mockup exactly */}
-      <div className="mb-5">
-        <span className="text-sky-500 text-sm font-semibold">Headline</span>
-      </div>
-
-      {/* Two-column layout: Text left, Image right */}
-      <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+    <section className="mb-10 pt-6">
+      {/* Two-column layout: Text left, Image right — balanced 50/50 spacing matching Figma */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
         {/* Left column — text content */}
-        <div className="flex-1 min-w-0 flex flex-col justify-center">
+        <div className="flex flex-col justify-start pr-0 md:pr-4 lg:pr-8">
+          {/* Headline label — moved down and changed to black */}
+          <p className="text-gray-900 text-[13px] font-semibold tracking-wide mb-3">Headline</p>
+
           <h1
-            className="text-2xl sm:text-3xl md:text-[28px] lg:text-[32px] font-bold text-slate-900 leading-tight mb-4 cursor-pointer hover:text-slate-700 transition-colors"
+            className="text-2xl sm:text-3xl md:text-[28px] lg:text-[32px] font-bold text-slate-800 leading-snug mb-4 cursor-pointer hover:text-sky-600 transition-colors"
             onClick={() => onClick(article)}
           >
             {article.title}
@@ -59,7 +57,7 @@ const Hero = ({ articles, onClick }) => {
 
         {/* Right column — image */}
         <div
-          className="w-full md:w-[420px] lg:w-[500px] xl:w-[540px] flex-shrink-0 aspect-[16/10] rounded-xl overflow-hidden bg-slate-100 cursor-pointer"
+          className="w-full aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 cursor-pointer shadow-sm hover:shadow-md transition-shadow"
           onClick={() => onClick(article)}
         >
           <img
